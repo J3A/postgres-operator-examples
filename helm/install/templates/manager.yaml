@@ -19,7 +19,7 @@ spec:
         image: "{{ .Values.image.repository }}/postgres-operator:{{ .Values.image.tag }}"
         env:
         - name: CRUNCHY_DEBUG
-          value: "true"
+          value: "false"
         {{- if .Values.singleNamespace }}
         - name: PGO_TARGET_NAMESPACE
           valueFrom: { fieldRef: { apiVersion: v1, fieldPath: metadata.namespace } }
